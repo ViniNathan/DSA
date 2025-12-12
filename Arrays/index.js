@@ -9,6 +9,10 @@ class CustomArray {
         this.length++;
         return this.length;
     }
+
+    get(index) {
+        return this.data[index];
+    }
 }
 
 const customArray = new CustomArray();
