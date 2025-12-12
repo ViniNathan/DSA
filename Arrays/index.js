@@ -4,3 +4,5 @@ class CustomArray {
         this.data = {};
     }
 }
+
+const customArray = new CustomArray();
