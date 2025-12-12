@@ -13,6 +13,11 @@ class CustomArray {
     get(index) {
         return this.data[index];
     }
+
+    pop() {
+        delete this.data[this.length-1];
+        this.length--;
+    }
 }
 
 const customArray = new CustomArray();
