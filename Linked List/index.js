@@ -67,10 +67,28 @@ class LinkedList {
         this.head.next = oldHead;
         this.length++
     }
+
+    shift() {
+        if (!this.head) {
+            return undefined;
+        }
+        const oldHeadNext = this.head;
+        this.head = this.head.next;
+
+        oldHeadNext.next = null;
+        this.length--;
+
+        if (this.length === 0) {
+            this.tail = null;
+        }
+
+    }
 }
 
-// const myLinkedList = new LinkedList(1);
-// myLinkedList.push(2)
-// console.log(myLinkedList);
-// myLinkedList.unshift(3)
-// console.log(myLinkedList);
+const myLinkedList = new LinkedList(0);
+myLinkedList.push(1)
+myLinkedList.push(2)
+myLinkedList.push(3)
+console.log(myLinkedList);
+myLinkedList.shift()
+console.log(myLinkedList);
