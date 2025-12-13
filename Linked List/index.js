@@ -18,7 +18,7 @@ class LinkedList {
     }
 
     push(data) {
-        let newNode = new Node(data);
+        const newNode = new Node(data);
         // If there are no nodes
         if (!this.head) {
             this.head = newNode;
@@ -52,12 +52,25 @@ class LinkedList {
             this.tail = null;
         }
         return temp
+    }
 
+    unshift(data) {
+        const newNode = new Node(data);
+
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+
+        const oldHead = this.head;
+        this.head = newNode;
+        this.head.next = oldHead;
+        this.length++
     }
 }
 
 // const myLinkedList = new LinkedList(1);
 // myLinkedList.push(2)
 // console.log(myLinkedList);
-// myLinkedList.pop()
+// myLinkedList.unshift(3)
 // console.log(myLinkedList);
