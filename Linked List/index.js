@@ -81,7 +81,10 @@ class LinkedList {
         if (this.length === 0) {
             this.tail = null;
         }
+    }
 
+    getFirst() {
+        return this.head;
     }
 }
 
@@ -89,6 +92,4 @@ const myLinkedList = new LinkedList(0);
 myLinkedList.push(1)
 myLinkedList.push(2)
 myLinkedList.push(3)
-console.log(myLinkedList);
-myLinkedList.shift()
-console.log(myLinkedList);
+console.log(myLinkedList.getFirst())
