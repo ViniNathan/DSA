@@ -6,6 +6,14 @@
 class Node {
     constructor(data) {
         this.head = data;
-        this.next = null
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor(data) {
+        this.head = new Node(data);
+        this.tail = this.head;
+        this.length = 1;
     }
 }
