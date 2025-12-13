@@ -30,10 +30,34 @@ class LinkedList {
         
         this.length++;
     }
+
+    pop() {
+        if (!this.head) {
+            return undefined;
+        }
+
+        let temp = this.head;
+        let prev = this.head;
+
+        while (temp.next) {
+            prev = temp;
+            temp = temp.next;
+        }
+        this.tail = prev;
+        this.tail.next = null;        
+        this.length--;
+
+        if (this.length === 0) {
+            this.head = null;
+            this.tail = null;
+        }
+        return temp
+
+    }
 }
 
-const myLinkedList = new LinkedList(1);
-myLinkedList.push(2)
-myLinkedList.push(3)
-myLinkedList.push(4)
-console.log(myLinkedList);
+// const myLinkedList = new LinkedList(1);
+// myLinkedList.push(2)
+// console.log(myLinkedList);
+// myLinkedList.pop()
+// console.log(myLinkedList);
