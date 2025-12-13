@@ -19,9 +19,21 @@ class LinkedList {
 
     push(data) {
         let newNode = new Node(data);
+        // If there are no nodes
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        
         this.tail.next = newNode;
         this.tail = newNode;
         
         this.length++;
     }
 }
+
+const myLinkedList = new LinkedList(1);
+myLinkedList.push(2)
+myLinkedList.push(3)
+myLinkedList.push(4)
+console.log(myLinkedList);
