@@ -86,10 +86,15 @@ class LinkedList {
     getFirst() {
         return this.head;
     }
+
+    getLast() {
+        return this.tail;
+    }
 }
 
 const myLinkedList = new LinkedList(0);
 myLinkedList.push(1)
 myLinkedList.push(2)
 myLinkedList.push(3)
-console.log(myLinkedList.getFirst())
+console.log(myLinkedList)
+console.log(myLinkedList.getLast())
