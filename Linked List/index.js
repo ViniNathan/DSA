@@ -90,6 +90,25 @@ class LinkedList {
     getLast() {
         return this.tail;
     }
+
+    getByIndex(index) {
+        let indexCounter = 0;
+        let actualNode = this.head;
+
+        if (!this.head) {
+            return undefined;
+        }
+
+        while (indexCounter < index && indexCounter <= this.length) {
+            indexCounter++;
+            actualNode = actualNode.next;
+        }
+
+        if (this.next == null) {
+            return undefined;
+        }
+        return actualNode;
+    }
 }
 
 const myLinkedList = new LinkedList(0);
@@ -97,4 +116,4 @@ myLinkedList.push(1)
 myLinkedList.push(2)
 myLinkedList.push(3)
 console.log(myLinkedList)
-console.log(myLinkedList.getLast())
+console.log(myLinkedList.getByIndex(4))
