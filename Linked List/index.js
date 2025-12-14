@@ -99,15 +99,39 @@ class LinkedList {
             return undefined;
         }
 
-        while (indexCounter < index && indexCounter <= this.length) {
+        while (indexCounter < index) {
             indexCounter++;
-            actualNode = actualNode.next;
+            if (actualNode.next) {
+                actualNode = actualNode.next;
+            } else {
+                return undefined;
+            }
         }
 
-        if (this.next == null) {
+        return actualNode;
+    }
+
+    set(index, newData) {
+        let indexCounter = 0;
+        let actualNode = this.head;
+
+        if (!this.head) {
             return undefined;
         }
+
+        while (indexCounter < index) {
+            indexCounter++;
+            if (actualNode.next) {
+                actualNode = actualNode.next;
+            } else {
+                return undefined;
+            }
+
+        }
+
+        actualNode.head = newData;
         return actualNode;
+
     }
 }
 
@@ -116,4 +140,4 @@ myLinkedList.push(1)
 myLinkedList.push(2)
 myLinkedList.push(3)
 console.log(myLinkedList)
-console.log(myLinkedList.getByIndex(4))
+console.log(myLinkedList.getByIndex(1, 3))
