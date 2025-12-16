@@ -175,6 +175,10 @@ class LinkedList {
 
         return indexCounter;
     }
+
+    clear() {
+        this.head = null;
+    }
 }
 
 const myLinkedList = new LinkedList(0);
@@ -182,4 +186,4 @@ myLinkedList.push(1)
 myLinkedList.push(2)
 myLinkedList.push(3)
 console.log(myLinkedList)
-console.log(myLinkedList.size())
+console.log(myLinkedList.clear())
