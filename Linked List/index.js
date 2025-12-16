@@ -131,7 +131,37 @@ class LinkedList {
 
         actualNode.head = newData;
         return actualNode;
+    }
 
+    insert(index, data) {
+        const newNode = new Node(data);
+
+        if (!this.head) {
+            this.head = newNode; 
+            this.tail = newNode;
+            this.length++;
+        }
+
+        let indexCounter = 0;
+        let actualNode = this.head;
+        let nextNode = actualNode.next;
+
+
+        while (indexCounter < index) {
+            indexCounter++;
+            if (actualNode.next) {
+                nextNode = nextNode.next;
+                actualNode = actualNode.next;
+            }
+            else {
+                return undefined;
+            }
+        }
+
+        newNode.next = nextNode;
+        actualNode.next = newNode;
+        this.length++;
+        return newNode;
     }
 }
 
@@ -140,4 +170,5 @@ myLinkedList.push(1)
 myLinkedList.push(2)
 myLinkedList.push(3)
 console.log(myLinkedList)
-console.log(myLinkedList.getByIndex(1, 3))
+console.log(myLinkedList.insert(3, 6))
+console.log(myLinkedList)
