@@ -163,6 +163,18 @@ class LinkedList {
         this.length++;
         return newNode;
     }
+
+    size() {
+        let indexCounter = 0;
+        let actualNode = this.head;
+
+        while (actualNode) {
+            indexCounter++;
+            actualNode = actualNode.next;
+        }
+
+        return indexCounter;
+    }
 }
 
 const myLinkedList = new LinkedList(0);
@@ -170,5 +182,4 @@ myLinkedList.push(1)
 myLinkedList.push(2)
 myLinkedList.push(3)
 console.log(myLinkedList)
-console.log(myLinkedList.insert(3, 6))
-console.log(myLinkedList)
+console.log(myLinkedList.size())
