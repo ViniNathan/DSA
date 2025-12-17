@@ -50,9 +50,27 @@ class DLinkedList {
         this.length--;
         return tailNode;
     }
+
+    unshift(data) {
+        const newNode = new Node(data);
+        
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.head.prev = newNode;
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+
+        this.length++;
+        return newNode;
+    }
 }
 
 const myDLinkedList = new DLinkedList(0);
-console.log(myDLinkedList)
-console.log(myDLinkedList.pop())
-console.log(myDLinkedList)
+myDLinkedList.push(1);
+myDLinkedList.push(2);
+console.log(myDLinkedList);
+console.log(myDLinkedList.unshift(3))
+console.log(myDLinkedList);
