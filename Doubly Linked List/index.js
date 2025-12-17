@@ -30,4 +30,29 @@ class DLinkedList {
         this.length++;
         return this;
     }
+
+    pop() {
+        if (!this.head) {
+            return undefined;
+        }
+
+        let tailNode = this.tail;
+
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+        this.tail = tailNode.prev;
+        this.tail.next = null;
+        tailNode.prev = null;
+        }
+        
+        this.length--;
+        return tailNode;
+    }
 }
+
+const myDLinkedList = new DLinkedList(0);
+console.log(myDLinkedList)
+console.log(myDLinkedList.pop())
+console.log(myDLinkedList)
