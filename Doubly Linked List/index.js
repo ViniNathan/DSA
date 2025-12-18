@@ -66,11 +66,27 @@ class DLinkedList {
         this.length++;
         return newNode;
     }
+
+    shift() {
+        if (!this.head) {
+            return undefined;
+        }
+
+        let oldHead = this.head;
+
+        this.head = this.head.next;
+        
+        this.head.prev = null;
+        oldHead.next = null;
+
+        this.length--;
+        return this.head;
+    }
 }
 
 const myDLinkedList = new DLinkedList(0);
 myDLinkedList.push(1);
 myDLinkedList.push(2);
 console.log(myDLinkedList);
-console.log(myDLinkedList.unshift(3))
+console.log(myDLinkedList.shift())
 console.log(myDLinkedList);
