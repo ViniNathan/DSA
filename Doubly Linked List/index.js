@@ -74,10 +74,16 @@ class DLinkedList {
 
         let oldHead = this.head;
 
-        this.head = this.head.next;
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = this.head.next;
+                    
+            this.head.prev = null;
+            oldHead.next = null;
+        }
         
-        this.head.prev = null;
-        oldHead.next = null;
 
         this.length--;
         return this.head;
