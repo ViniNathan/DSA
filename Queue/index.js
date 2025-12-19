@@ -26,6 +26,26 @@ class Queue {
         this.length++
         return newNode;
     }
+
+    dequeue() {
+        let originalFirst = this.first;
+
+        if (!this.first) {
+            return undefined;
+        }
+        
+        if (this.length === 1) {
+            this.first = null;
+            this.last = null;
+        } else {
+            this.first = this.first.next;
+            originalFirst.next = null;
+            originalFirst = null;
+        }
+
+        this.length--;
+        return this;
+    }
 }
 
 const myQueue = new Queue(0);
