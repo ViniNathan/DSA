@@ -25,8 +25,25 @@ class Stack {
 
         return this;
     }
+
+    pop() {
+        if (!this.first) {
+            return undefined;
+        }
+
+        let oldFirst = this.first;
+
+        this.first = this.first.next;
+
+        oldFirst.next = null;
+        oldFirst = null;
+        this.lenght--;
+        return this;
+    }
 }
 
 const myStack = new Stack(1);
 myStack.push(2)
+myStack.push(3)
+myStack.pop()
 console.log(myStack)
