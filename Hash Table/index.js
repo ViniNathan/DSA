@@ -31,4 +31,17 @@ class HashTable {
 
         return this;
     }
+
+    get(key) {
+        const index = this._hashFunction(key);
+
+        if (this.keyMap[index]) {
+            for (let i = 0; i < this.key[index].length; i++){
+                if (this.keyMap[index][i][0] === key) {
+                    return this.keyMap[index][i][1];
+                }
+            }
+        }
+        return undefined;
+    }
 }
