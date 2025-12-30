@@ -44,12 +44,43 @@ class BST {
             }
         }
     }
+
+    includes(data) {
+        let actualNode = this.root;
+
+        if (this.root.data === data) {
+            return true;
+        }
+
+        while (true) {
+            if (data < actualNode.data) {
+                if (actualNode.left !== null) {
+                    actualNode = actualNode.left;
+                    if (actualNode.data === data) {
+                        return true;
+                    }
+                } else {
+                    return false;
+                }
+            } else {
+                if (actualNode.right !== null) {
+                    actualNode = actualNode.right;
+                    if (actualNode.data === data) {
+                        return true;
+                    }
+                } else {
+                    return false;
+                }
+            }
+        }
+    }
 }
 
 const tree = new BST();
-tree.put(1)
-tree.put(2)
-tree.put(0)
-tree.put(3)
-tree.put(-1)
+tree.insert(1)
+tree.insert(2)
+tree.insert(0)
+tree.insert(3)
+tree.insert(-1)
 console.log(tree)
+console.log(tree.includes(-4))
