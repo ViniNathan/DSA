@@ -11,7 +11,7 @@ class BST {
         this.root = null;
     }
 
-    put(data) {
+    insert(data) {
         const newNode = new Node(data);
 
         if (this.root === null) {
