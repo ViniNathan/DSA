@@ -16,3 +16,12 @@
 //   D:["C","E"],
 //   E:["A","D"]
 // }
+
+class Graph {
+    constructor() {
+        this.adjacencyList = {}
+    }
+}
+
+const graph = new Graph();
+console.log(graph);
