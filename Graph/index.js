@@ -1,6 +1,6 @@
 // Graph is a non-linear data structure that models relationships between objects.
 // It consists of two main components: Vertices (nodes) & Edges
-// Adjency list: shows to us how the Vertices are connected by Edges:
+// Adjacency list: shows to us how the Vertices are connected by Edges:
 //
 //    E-----------A--------B
 //    |                    |
