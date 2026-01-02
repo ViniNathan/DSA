@@ -95,6 +95,16 @@ class BST {
 
         return data;
     }
+
+    dfsInOrder(node = this.root, data = []) {
+        if (node === null) return data;
+
+        if (node.left) this.dfsPreOrder(node.left, data);
+        data.push(node.data)
+        if (node.right) this.dfsPreOrder(node.right, data);
+
+        return data;
+    }
 }
 
 const tree = new BST();
@@ -104,4 +114,4 @@ tree.insert(0)
 tree.insert(3)
 tree.insert(-1)
 console.log(tree)
-console.log(tree.dfsPostOrder())
+console.log(tree.dfsInOrder())
