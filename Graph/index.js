@@ -53,6 +53,19 @@ class Graph {
 
         return false;
     };
+
+    removeVertex(vtx) {
+        if (!this.adjacencyList[vtx]) return undefined;
+
+        for (let neighbor of this.adjacencyList[vtx]) {
+            this.adjacencyList[neighbor] = this.adjacencyList[neighbor].filter(
+                v => v != vtx
+            );
+        }
+
+        delete this.adjacencyList[vtx]
+        return this;
+    };
 }
 
 const graph = new Graph();
@@ -61,5 +74,6 @@ graph.addVertex("B");
 graph.addVertex("C");
 graph.addEdge("A", "B");
 graph.addEdge("B", "C");
-graph.removeEdge("A","B");
+graph.removeEdge("A", "B");
+graph.removeVertex("C")
 console.log(graph);
